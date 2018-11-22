@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+
+<property> 
+        <name>dfs.namenode.name.dir</name> 
+        <value>/home/hadoop/hadoop/data/dfs/name</value> 
+    </property> 
+    <property> 
+        <name>dfs.datanode.data.dir</name> 
+        <value>/home/hadoop/hadoop/data/dfs/data</value> 
+    </property> 
+    <property> 
+        <name>dfs.replication</name> 
+        <value>1</value> 
+    </property> 
+ <property>
+<name>dfs.permissions</name>
+<value>false</value>
+</property> 
+    <!--HDFS高可用配置 --> 
+    <!--指定hdfs的nameservice，需要和core-site.xml中的保持一致--> 
+    <property> 
+        <name>dfs.nameservices</name> 
+        <value>hadoop-cloud</value> 
+    </property> 
+    <!--指定master的两个namenode的名称 --> 
+    <property> 
+        <name>dfs.ha.namenodes.hadoop-cloud</name> 
+        <value>nn1,nn2</value> 
+    </property> 
+  
+    <!-- nn1,nn2 rpc 通信地址 --> 
+    <property> 
+        <name>dfs.namenode.rpc-address.hadoop-cloud.nn1</name> 
+        <value>hadoop-01:9000</value> 
+    </property> 
+    <property> 
+        <name>dfs.namenode.rpc-address.hadoop-cloud.nn2</name> 
+        <value>hadoop-02:9000</value> 
+    </property> 
+  
+    <!-- nn1.nn2 http 通信地址 --> 
+    <property> 
+        <name>dfs.namenode.http-address.hadoop-cloud.nn1</name> 
+        <value>hadoop-01:50070</value> 
+    </property> 
+    <property> 
+        <name>dfs.namenode.http-address.hadoop-cloud.nn2</name> 
+        <value>hadoop-02:50070</value> 
+    </property> 
+  
+    <!--=========Namenode同步==========--> 
+    <!--保证数据恢复 --> 
+    <property> 
+        <name>dfs.journalnode.http-address</name> 
+        <value>0.0.0.0:8480</value> 
+    </property> 
+    <property> 
+        <name>dfs.journalnode.rpc-address</name> 
+        <value>0.0.0.0:8485</value> 
+    </property> 
+    <property> 
+        <!--指定NameNode的元数据在JournalNode上的存放位置 --> 
+        <name>dfs.namenode.shared.edits.dir</name> 
+        <value>qjournal://hadoop-03:8485;hadoop-04:8485;hadoop-05:8485/hadoop-cloud</value> 
+    </property> 
+  
+    <property> 
+        <!--JournalNode存放数据地址 --> 
+        <name>dfs.journalnode.edits.dir</name> 
+        <value>/home/hadoop/hadoop/data/dfs/journal</value> 
+    </property> 
+    <property> 
+        <!--NameNode失败自动切换实现方式 --> 
+        <name>dfs.client.failover.proxy.provider.hadoop-cloud</name> 
+        <value>org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider</value> 
+    </property> 
+  
+    <!--=========Namenode fencing：======== --> 
+    <!-- 配置隔离机制方法，多个机制用换行分割，即每个机制暂用一行 --> 
+    <property> 
+        <name>dfs.ha.fencing.methods</name> 
+        <value>sshfence 
+                shell(/bin/true)</value> 
+    </property> 
+    <!-- 使用sshfence隔离机制时需要ssh免登陆 --> 
+    <property> 
+        <name>dfs.ha.fencing.ssh.private-key-files</name> 
+        <value>/home/hadoop/.ssh/id_rsa</value> 
+    </property> 
+    <!-- 配置sshfence隔离机制超时时间 --> 
+    <property> 
+        <name>dfs.ha.fencing.ssh.connect-timeout</name> 
+        <value>30000</value> 
+    </property> 
+  
+    <!--开启基于Zookeeper及ZKFC进程的自动备援设置,监视进程是否死掉 --> 
+    <property> 
+        <name>dfs.ha.automatic-failover.enabled</name> 
+        <value>true</value> 
+    </property> 
+    <property> 
+        <name>ha.zookeeper.quorum</name> 
+    <value>hadoop-03:2181,hadoop-04:2181,hadoop-05:2181</value> 
+    </property> 
+    <property> 
+        <!--指定ZooKeeper超时间隔，单位毫秒 --> 
+        <name>ha.zookeeper.session-timeout.ms</name> 
+        <value>2000</value> 
+    </property>
+</configuration>

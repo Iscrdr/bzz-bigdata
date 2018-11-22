@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>bzz-bigdata</artifactId>
+     <groupId>com.bzz.cloud</groupId>
+      <version>1.0-SNAPSHOT</version>
+
+	<name>bzz-bigdata</name>
+	<packaging>pom</packaging>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <modules>
+	    <module>bzz-common</module>
+        <module>bzz-storm</module>
+        <module>bzz-scala</module>
+        <module>bzz-spark</module>
+	    <module>bzz-hdfs</module>
+        <module>bzz-hive</module>
+	    <module>bzz-mapreduce</module>
+	    <module>bzz-zookeeper</module>
+        <module>bzz-hbase</module>
+        <module>bzz-flink</module>
+    </modules>
+	<repositories>
+		<repository>
+			<id>aliyunmaven</id>
+			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+		</repository>
+	</repositories>
+
+</project>
