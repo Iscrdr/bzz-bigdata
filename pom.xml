@@ -16,6 +16,7 @@
     </properties>
     <modules>
 	    <module>bzz-common</module>
+        <module>bzz-batch</module>
         <module>bzz-storm</module>
         <module>bzz-scala</module>
         <module>bzz-spark</module>
@@ -25,6 +26,11 @@
 	    <module>bzz-zookeeper</module>
         <module>bzz-hbase</module>
         <module>bzz-flink</module>
+        <module>bzz-kafka</module>
+        <module>bzz-elasticsearch</module>
+        <module>bzz-opentsdb</module>
+        <module>bzz-modbus</module>
+        <module>bzz-excel</module>
     </modules>
 	<repositories>
 		<repository>

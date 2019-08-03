@@ -1,8 +1,10 @@
 package com.scala.actor
 
-class HelloActor/* extends Actor */{
+//import scala.actors.Actor
 
-  /*override def act(): Unit = {
+class HelloActor /*extends Actor*/ {
+/*
+  override def act(): Unit = {
     while(true) {
       receive {
         case "bzz." => {

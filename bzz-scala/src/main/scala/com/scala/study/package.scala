@@ -1,19 +1,11 @@
 package com.scala
 
 import java.io.{FileNotFoundException, IOException}
-import java.util
-
-import com.scala.study.Person
-
 import scala.language.postfixOps
-
-
 object Grade {
-
   def main(args: Array[String]): Unit = {
    /* judgeGrade("A");
     judgeGrade("f");
-
     judgeGrade("jack","A");
     judgeGrade("leo","f");
     judgeGrade2("F");
@@ -28,7 +20,6 @@ object Grade {
       case Teacher(subject) => println(" Teacher, subject is  " +subject )
     }
   }*/
-
   def greeting1(arr:Array[String]){
     arr match {
       case Array("Leo") => println(" Hello , Leo ！ " )

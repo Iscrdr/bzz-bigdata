@@ -1,9 +1,6 @@
 package com.spark.scala.sql
 
-import com.spark.sql.Student
-import org.apache.spark.sql.SQLContext
 import org.apache.spark.{SparkConf, SparkContext}
-
 /**
   * @Title: RDDdataReflect
   * @ProjectName bzz-cloud

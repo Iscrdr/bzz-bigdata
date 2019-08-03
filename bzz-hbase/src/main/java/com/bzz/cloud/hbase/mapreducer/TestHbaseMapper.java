@@ -19,7 +19,6 @@ public class TestHbaseMapper extends TableMapper<ImmutableBytesWritable, Put> {
 
         //封装put对象
         Put put=new Put(key.get());
-
         //遍历结果集
         for(Cell cell:value.rawCells()) {
 

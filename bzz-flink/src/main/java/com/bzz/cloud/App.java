@@ -17,7 +17,6 @@ public class App
         // 要超过多少内存大小JVM才能感觉到？
         ByteBuffer buffer = ByteBuffer.allocate(102400);
         System.out.println("buffer = " + buffer);
-
         System.out.println("after alocate:"
                 + Runtime.getRuntime().freeMemory());
 

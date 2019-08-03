@@ -8,6 +8,9 @@ import org.apache.log4j.Logger;
 
 import java.sql.Connection;
 
+/**
+ * @author cloud
+ */
 public class HikariPoolManager {
 	
 	private static Logger logger = LogManager.getLogger(JdbcProperties.class);
