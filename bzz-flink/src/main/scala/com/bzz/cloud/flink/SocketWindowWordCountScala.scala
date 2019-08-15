@@ -22,7 +22,6 @@ object SocketWindowWordCountScala {
       .sum(1)
       //.sum("word")
 
-
     windowCounts.print().setParallelism(1)
 
     env.execute("SocketWindowWordCountScala")

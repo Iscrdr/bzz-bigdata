@@ -1,4 +1,4 @@
-package com.bzz.cloud.flink;
+package com.bzz.cloud.flink.batch;
 
 import org.apache.flink.api.common.functions.FlatMapFunction;
 import org.apache.flink.api.java.utils.ParameterTool;
