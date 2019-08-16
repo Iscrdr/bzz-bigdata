@@ -2,7 +2,7 @@ package com.spark.scala.sql
 
 import java.lang.reflect.Constructor
 
-import oracle.jdbc.proxy.annotation.Methods
+//import oracle.jdbc.proxy.annotation.Methods
 import org.apache.hadoop.conf.Configuration
 import org.apache.spark.SparkConf
 import org.apache.spark.deploy.SparkHadoopUtil
