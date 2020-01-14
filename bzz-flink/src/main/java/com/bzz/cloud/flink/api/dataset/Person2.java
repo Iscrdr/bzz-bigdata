@@ -1,5 +1,6 @@
 package com.bzz.cloud.flink.api.dataset;
 
+
 /**
  * @program: bzz-bigdata
  * @description: POJO

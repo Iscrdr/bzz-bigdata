@@ -15,7 +15,7 @@ import java.sql.ResultSet;
  * @author: 624003618@qq.com
  * @create: 2019-08-12 19:30
  */
-public class MysqlSource extends RichSourceFunction<CCustSale> {
+public class MysqlSource extends RichSourceFunction<String> {
 
     PreparedStatement ps;
     private Connection connection;
@@ -24,13 +24,17 @@ public class MysqlSource extends RichSourceFunction<CCustSale> {
     public void open(Configuration parameters) throws Exception {
         super.open(parameters);
         connection = DBUtil.getConnection();
-        String sql = "select * from c_cust_sale_2019 limit 10;";
+        String sql = "select * from c_cust_sale_2019 ;";
         ps = this.connection.prepareStatement(sql);
     }
 
     @Override
-    public void run(SourceContext<CCustSale> ctx) throws Exception {
+    public void run(SourceContext<String> ctx) throws Exception {
+
         ResultSet resultSet = ps.executeQuery();
+
+
+
         while (resultSet.next()) {
             CCustSale cc = new CCustSale();
             cc.setId(resultSet.getString("id"));
@@ -69,7 +73,7 @@ public class MysqlSource extends RichSourceFunction<CCustSale> {
             cc.setUpdateBy(resultSet.getString("update_by"));
             cc.setUpdateDate(resultSet.getDate("update_date"));
             cc.setDelFlag(resultSet.getString("del_flag"));
-            ctx.collect(cc);
+            ctx.collect(cc.toString());
         }
 
     }

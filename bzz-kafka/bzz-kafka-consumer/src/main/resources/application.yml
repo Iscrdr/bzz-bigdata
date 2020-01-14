@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: bzz-kafka-consumer
+#  main:
+#    lazy-initialization: true #启用延迟初始化SpringApplication
+
+
+
+logging:
+  level:
+    com.bzz.cloud: TRACE

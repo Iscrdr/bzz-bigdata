@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: bzz-kafka-producer
+
+logging:
+  level:
+    com.bzz.cloud: TRACE

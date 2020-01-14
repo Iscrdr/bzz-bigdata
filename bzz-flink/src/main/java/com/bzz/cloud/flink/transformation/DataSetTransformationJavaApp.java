@@ -40,6 +40,7 @@ public class DataSetTransformationJavaApp {
         integerDataSource.filter(x -> x%2==0).print();
         integerDataSource.filter((FilterFunction<Integer>)x -> x%2==0).print();
 
-
     }
+
+
 }

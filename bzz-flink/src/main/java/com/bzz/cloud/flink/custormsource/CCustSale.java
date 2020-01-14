@@ -1,10 +1,14 @@
 /**
- * Copyright &copy; 2015-2020 <a href="http://www.xiaostarstar.com/">XSS</a> All rights reserved.
+ * Copyright &copy; 2015-2020 <a href=http://www.xiaostarstar.com/>XSS</a> All rights reserved.
  */
 package com.bzz.cloud.flink.custormsource;
 
 
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -43,8 +47,7 @@ public class CCustSale implements Serializable {
 	private Date danjuriqi;		// 单据日期
 	private String kucundidian;		// 库存地点
 	private String caigoubianhao;		// 采购订单号码
-	private Date beginFapiaoshiqi;		// 开始 出具发票日期
-	private Date endFapiaoshiqi;		// 结束 出具发票日期
+
 	
 	private String tableName;//表名
 
@@ -285,25 +288,8 @@ public class CCustSale implements Serializable {
 		this.caigoubianhao = caigoubianhao;
 	}
 
-	public Date getBeginFapiaoshiqi() {
-		return beginFapiaoshiqi;
-	}
 
-	public void setBeginFapiaoshiqi(Date beginFapiaoshiqi) {
-		this.beginFapiaoshiqi = beginFapiaoshiqi;
-	}
 
-	public Date getEndFapiaoshiqi() {
-		return endFapiaoshiqi;
-	}
-
-	public void setEndFapiaoshiqi(Date endFapiaoshiqi) {
-		this.endFapiaoshiqi = endFapiaoshiqi;
-	}
-
-	public String getTableName() {
-		return tableName;
-	}
 
 	public void setTableName(String tableName) {
 		this.tableName = tableName;
@@ -363,42 +349,43 @@ public class CCustSale implements Serializable {
 
 	@Override
 	public String toString() {
-		return "CCustSale{" +
-				"id='" + id + '\'' +
-				", gongchang='" + gongchang + '\'' +
-				", daqu='" + daqu + '\'' +
-				", chengshi='" + chengshi + '\'' +
-				", yewuyuan='" + yewuyuan + '\'' +
-				", custNo='" + custNo + '\'' +
-				", custName='" + custName + '\'' +
-				", dapinleimiaoshu='" + dapinleimiaoshu + '\'' +
-				", yijipinleimiaoshu='" + yijipinleimiaoshu + '\'' +
-				", erjipinleimiaoshu='" + erjipinleimiaoshu + '\'' +
-				", sanjipinleimiaoshu='" + sanjipinleimiaoshu + '\'' +
-				", chanpinxianmiaoshu='" + chanpinxianmiaoshu + '\'' +
-				", wuliaobianma='" + wuliaobianma + '\'' +
-				", wuliaomiaoshu='" + wuliaomiaoshu + '\'' +
-				", xiang=" + xiang +
-				", dun=" + dun +
-				", xiaoshoushouru=" + xiaoshoushouru +
-				", jingzhi=" + jingzhi +
-				", shuie=" + shuie +
-				", zhanlvjine=" + zhanlvjine +
-				", zhekoujine=" + zhekoujine +
-				", zhekoubili=" + zhekoubili +
-				", shoudafangjiancheng='" + shoudafangjiancheng + '\'' +
-				", fapiaoshiqi=" + fapiaoshiqi +
-				", dingdanbianhao='" + dingdanbianhao + '\'' +
-				", danjuriqi=" + danjuriqi +
-				", kucundidian='" + kucundidian + '\'' +
-				", caigoubianhao='" + caigoubianhao + '\'' +
+		return new StringBuilder()
+				.append(id+",")
+				.append(StringUtils.isBlank(gongchang)==true?"gongchang,":gongchang+",")
+				.append(StringUtils.isBlank(daqu)==true?"daqu,":daqu+",")
+				.append(StringUtils.isBlank(chengshi)==true?"chengshi,":chengshi+",")
+				.append(StringUtils.isBlank(yewuyuan)==true?"yewuyuan,":yewuyuan+",")
+				.append(StringUtils.isBlank(custNo)==true?"custNo,":custNo+",")
+				.append(StringUtils.isBlank(custName)==true?"custName,":custName+",")
+				.append(StringUtils.isBlank(dapinleimiaoshu)==true?"dapinleimiaoshu,":dapinleimiaoshu+",")
+				.append(StringUtils.isBlank(yijipinleimiaoshu)==true?"yijipinleimiaoshu,":yijipinleimiaoshu+",")
+				.append(StringUtils.isBlank(erjipinleimiaoshu)==true?"erjipinleimiaoshu,":erjipinleimiaoshu+",")
+				.append(StringUtils.isBlank(sanjipinleimiaoshu)==true?"sanjipinleimiaoshu,":sanjipinleimiaoshu+",")
+				.append(StringUtils.isBlank(chanpinxianmiaoshu)==true?"chanpinxianmiaoshu,":chanpinxianmiaoshu+",")
+				.append(StringUtils.isBlank(wuliaobianma)==true?"wuliaobianma,":wuliaobianma+",")
+				.append(StringUtils.isBlank(wuliaomiaoshu)==true?"wuliaomiaoshu,":wuliaomiaoshu+",")
+				.append(xiang+",")
+				.append(dun+",")
+				.append(xiaoshoushouru+",")
+				.append(jingzhi+",")
+				.append(shuie+",")
+				.append(zhanlvjine+",")
+				.append(zhekoujine+",")
+				.append(zhekoubili+",")
+				.append(StringUtils.isBlank(shoudafangjiancheng)==true?"shoudafangjiancheng,":shoudafangjiancheng+",")
+				.append(fapiaoshiqi+",")
+				.append(StringUtils.isBlank(dingdanbianhao)==true?"dingdanbianhao,":dingdanbianhao+",")
+				.append(danjuriqi+",")
+				.append(StringUtils.isBlank(kucundidian)==true?"kucundidian,":kucundidian+",")
+				.append(StringUtils.isBlank(caigoubianhao)==true?"caigoubianhao,":caigoubianhao+",")
 
-				/*", remarks='" + remarks + '\'' +
-				", createBy='" + createBy + '\'' +
-				", createDate=" + createDate +
-				", updateBy='" + updateBy + '\'' +
-				", updateDate=" + updateDate +
-				", delFlag='" + delFlag + '\'' +*/
-				'}';
+				.append(StringUtils.isBlank(remarks)==true?"remark,":remarks+",")
+				.append(createBy+",")
+				.append(createDate+",")
+				.append(updateBy+",")
+				.append(updateDate+",")
+				.append(delFlag)
+				.toString();
 	}
+
 }

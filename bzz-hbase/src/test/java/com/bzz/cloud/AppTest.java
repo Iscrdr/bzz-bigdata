@@ -33,7 +33,6 @@ public class AppTest {
 
         //创建namespace
         NamespaceDescriptor namespace = NamespaceDescriptor.create("hadoop111").build();
-
         admin.createNamespace(namespace);
 
     }
