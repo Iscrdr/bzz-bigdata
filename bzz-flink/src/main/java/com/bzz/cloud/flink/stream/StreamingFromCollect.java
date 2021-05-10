@@ -17,6 +17,7 @@ import java.util.List;
 public class StreamingFromCollect {
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment environment = StreamExecutionEnvironment.getExecutionEnvironment();
+
         List<Integer> list = new ArrayList<>();
         list.add(1);
         list.add(2);

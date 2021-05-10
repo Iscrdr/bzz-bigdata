@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-   
+
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>bzz-bigdata</artifactId>
@@ -39,6 +39,9 @@
         <module>bzz-modbus</module>
         <module>bzz-excel</module>
         <module>bzz-test</module>
+        <module>bzz-reptile</module>
+        <module>bzz-datastructure</module>
+        <module>bzz-performance</module>
     </modules>
 
     <repositories>

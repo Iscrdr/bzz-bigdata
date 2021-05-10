@@ -24,7 +24,7 @@ public class MysqlSource extends RichSourceFunction<String> {
     public void open(Configuration parameters) throws Exception {
         super.open(parameters);
         connection = DBUtil.getConnection();
-        String sql = "select * from c_cust_sale_2019 ;";
+        String sql = "select * from c_cust_sale_2019 limit 5";
         ps = this.connection.prepareStatement(sql);
     }
 
@@ -32,9 +32,6 @@ public class MysqlSource extends RichSourceFunction<String> {
     public void run(SourceContext<String> ctx) throws Exception {
 
         ResultSet resultSet = ps.executeQuery();
-
-
-
         while (resultSet.next()) {
             CCustSale cc = new CCustSale();
             cc.setId(resultSet.getString("id"));

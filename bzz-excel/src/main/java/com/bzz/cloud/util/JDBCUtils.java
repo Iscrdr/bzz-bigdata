@@ -16,13 +16,13 @@ import java.util.List;
  * @Author:624003618@qq.com
  */
 public class JDBCUtils {
-    private static String url = "jdbc:mysql://192.168.132.150:3306/rcsjfx?useUnicode=true?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true&autoReconnect=true&failOverReadOnly=false&maxReconnects=10";
+    //private static String url = "jdbc:mysql://192.168.132.150:3306/rcsjfx?useUnicode=true?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true&autoReconnect=true&failOverReadOnly=false&maxReconnects=10";
 
-    //private static String url = "jdbc:mysql://118.89.237.130:3306/rcsjfx?useUnicode=true&characterEncoding=utf-8&rewriteBatchedStatements=true&useSSL=false";
-    private static String password = "root";
+    private static String url = "jdbc:mysql://118.89.237.130:3306/rcsjfx?useUnicode=true&characterEncoding=utf-8&rewriteBatchedStatements=true&useSSL=false";
+    //private static String password = "root";
 
     private static String user = "root";
-    //private static String password = "kaqkwgisshwqhs9wh";
+    private static String password = "kaqkwgisshwqhs9wh";
 
     private static SnowflakeIdWorker idWorker = new SnowflakeIdWorker(1, 1);
 

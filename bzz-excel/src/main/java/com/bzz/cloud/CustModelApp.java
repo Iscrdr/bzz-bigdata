@@ -20,7 +20,5 @@ public class CustModelApp {
         System.out.println(data.size());
         long endTime = System.currentTimeMillis();
         System.out.println("耗时："+(endTime-startTime)+"ms");
-
-
     }
 }
