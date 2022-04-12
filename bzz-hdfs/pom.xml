@@ -15,7 +15,7 @@
 	<name>bzz-hdfs</name>
 	<packaging>jar</packaging>
 	<properties>
-		<hadoop.version>2.7.5</hadoop.version>
+		<hadoop.version>3.2.3</hadoop.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<dependencies>
